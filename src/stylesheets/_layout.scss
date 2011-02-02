@@ -85,7 +85,6 @@ $navheight: 61px;
   $n3: 93px;
   $n4: 60px;
 
-  /* Chaque univers donne une classe au body préfixée par u- */
   #n1 a { @include nav($n1, 0, 'homepage', $navheight); }
   #n2 a { @include nav($n2, $n1, 'aboutus', $navheight); }
   #n3 a { @include nav($n3, #{$n2 + $n1}, 'contact', $navheight); }
