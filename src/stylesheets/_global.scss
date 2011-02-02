@@ -1,0 +1,53 @@
+@import "config";
+
+.relative { position: relative; }
+.hr {
+  height: 1px;
+  overflow: hidden;
+  background: #DAE2ED;
+  border-top: 1px solid #fff;
+}
+
+.imgleft {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.imgright {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.imgcenter {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Floats */
+.left { float: left; }
+.right { float: right; }
+
+/* Clearing floats */
+.cleft  { clear: left; }
+.cright { clear: right;}
+
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:before,
+.clearfix:after {content:'\0020';display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after {clear:both}
+.clearfix{zoom:1}
+
+.inner { padding: 10px; }
+
+.box-block {
+  background: white;
+  @include box-shadow(rgba(0,0,0,0.2), 0, 1px, 3px);
+}
+.box-rounded {
+  @include border-radius(4px);
+}
+  .box-inner {
+    padding: 20px;
+  }

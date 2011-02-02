@@ -1,0 +1,22 @@
+Prototype : projet
+==================
+
+* [Preview en ligne](http://dev.url.com/)
+
+Installation
+------------
+
+    bundle install
+    rake preview
+
+Tâches Rake
+-----------
+
+    rake build            # Builds the site
+    rake deploy           # Clears and generates new styles, builds and deploys
+    rake preview          # Runs preview
+    rake push             # push
+    rake styles:clear     # Clears the styles
+    rake styles:generate  # Generates new styles
+    rake watch            # Watch the site and regenerate when it changes
+    rake zip              # Archives the site to site/archive.tar.gz

@@ -1,0 +1,28 @@
+/* ========= */
+/* = Setup = */
+/* ========= */
+$clink: #007DC2;
+$cvisited: $clink;
+$chover: darken($clink, 10%);
+$cbody: #222;
+$typo-alt: 'Gill Sans', 'Century Gothic', Tahoma, Arial, sans-serif;
+
+/* ================== */
+/* = Import helpers = */
+/* ================== */
+@import "compass/css3/opacity";
+@import "compass/css3";
+@import "compass/utilities/general/min";
+@import "compass/utilities/general/clearfix";
+
+/* ==================== */
+/* = Site-wide mixins = */
+/* ==================== */
+@mixin nav($w, $p, $class, $navheight) {
+  width: $w;
+  background-position: -($p) 0;
+  .#{$class} &,
+  &:hover {
+    background-position: -($p) (-($navheight));
+  }
+}

@@ -1,0 +1,137 @@
+@import "config";
+
+// =========================================
+// = Layout: Header, Navigation, Footer... =
+// =========================================
+
+body {
+  background: #fff;
+}
+.wrapper {
+  background: #BAC1D3 url('../images/background.png') center top repeat-y;
+}
+
+// ===========
+// = =Header =
+// ===========
+.header-wrapper {
+  background: url('../images/header.png') center top no-repeat;
+  position: relative;
+  z-index: 2;
+}
+.header {
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  height: 153px;
+}
+#logo {
+  font-size: 2em;
+  width: 641px;
+  height: 85px;
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  text-decoration: none;
+  span {
+    position: absolute;
+    top: -9999em;
+    left: 0;
+  }
+  img {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+  }
+}
+$navheight: 61px;
+
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-size: 12px;
+  line-height: 18px;
+  top: 111px;
+  right: 20px;
+  height: $navheight;
+  width: 291px;
+  z-index: 12;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline;
+    float: left;
+    margin: 0;
+    height: $navheight;
+    padding: 0;
+    position: relative;
+  }
+  a {
+    display: inline;
+    float: left;
+    padding-top: $navheight;
+    height: 0;
+    overflow: hidden;
+    background: url('../images/navigation.png') 0 0 no-repeat;
+  }
+}
+  $n1: 45px;
+  $n2: 93px;
+  $n3: 93px;
+  $n4: 60px;
+
+  /* Chaque univers donne une classe au body préfixée par u- */
+  #n1 a { @include nav($n1, 0, 'homepage', $navheight); }
+  #n2 a { @include nav($n2, $n1, 'aboutus', $navheight); }
+  #n3 a { @include nav($n3, #{$n2 + $n1}, 'contact', $navheight); }
+  #n4 a { @include nav($n4, #{$n3 + $n2 + $n1}, 'legal', $navheight); }
+
+#skip-to-nav {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 160px;
+  width: 150px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    position: absolute;
+    top: -9999em;
+    &:hover,
+    &:active,
+    &:focus {
+      display:block; position: relative; top: 0;
+    }
+  }
+}
+
+// ============
+// = =Content =
+// ============
+
+// ===========
+// = =Footer =
+// ===========
+.footer {
+  background: url('../images/footer.png') center top repeat-x;
+  @include min-height(70px);
+  clear: both;
+  position: relative;
+  a {
+    @include text-shadow(rgb(255,255,255), 0, 1px, 0);
+    text-decoration: none;
+    color: #333;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+

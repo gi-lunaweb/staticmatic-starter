@@ -1,0 +1,73 @@
+@import "config";
+
+/* =============== */
+/* = Form styles = */
+/* =============== */
+
+input, textarea {
+  font: normal 12px/18px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+input {
+  &.text, &[type=text], &.password, &[type=password] {
+    vertical-align: middle;
+  }
+  &[type=submit] {
+    cursor: pointer;
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+.check {
+  text-decoration: none;
+  float: left;
+  position: relative;
+  input {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+  label {
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-left: 18px;
+    display: inline;
+  }
+}
+
+/* ============== */
+/* = Searchform = */
+/* ============== */
+.field-search {
+  font: normal 11px/18px Arial, Helvetica, sans-serif;
+  border: 0;
+  cursor: auto;
+  display: block;
+  vertical-align: middle;
+  padding: 4px 3px 4px 8px;
+  margin: 0;
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  outline: none;
+  color: #666;
+  background: transparent;
+}
+::-webkit-search-decoration {
+  display: none;
+}
+::-webkit-input-placeholder {
+   color: #65697B;
+}
+:-moz-placeholder {
+   color: #65697B;
+}

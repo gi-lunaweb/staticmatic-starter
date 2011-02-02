@@ -1,0 +1,61 @@
+!!! 5
+/[if lt IE 7] <html lang="fr" class="no-js ie6">
+/[if IE 7 ]    <html lang="fr" class="no-js ie7">
+/[if IE 8 ]    <html lang="fr" class="no-js ie8">
+/[if IE 9 ]    <html lang="fr" class="no-js ie9">
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="fr" class="no-js"> <!--<![endif]-->
+  
+%head
+  = partial("head")
+%body{:id => @body_id, :class => @body_class}
+  :javascript
+    document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
+  .wrapper
+    .header-wrapper
+      #header.header.container_16
+        #skip-to-nav
+          %ul.nobullets.small
+            %li= link "Aller au plan du site", "/sitemap#content"
+            %li= link "Aller au contenu", "#content"
+            %li= link "Aller à la recherche", "#footer-search"
+            %li= link "Aller à la navigation principale", "#navigation"
+
+        %ul#navigation.navigation
+          %li#n1= link "Accueil", "/"
+          %li#n2= link "Menu item", "/item1/"
+          %li#n3= link "Menu item", "/item2/"
+          %li#n4= link "Menu item", "/item3/"
+
+        %ul#header-tools.list-inline.small.list-separators
+          %li= link "Qui sommes-nous", "/aboutus"
+          %li= link "Presse", "/presse"
+        
+        %a#logo{:href => "/", :title => "Revenir à la page d’accueil"}
+          = img "logo.png", {:width => "200", :height => "100", :alt => ""}
+    
+    .content-wrapper
+        
+      #content.container_16
+        = yield
+        .clear
+  .footer.small
+    .container_16
+      #footer-navigation.grid_9
+        %ul.list-inline.left.list-separators{:role => "contentinfo"}
+          %li< 
+            %b.cbleu © 2011
+          %li= link "Crédits", "/credits"
+          %li= link "Plan du site", "/sitemap"
+          %li= link "Nous contacter", "/contact"
+          
+  = javascripts('//ajax.microsoft.com/ajax/jQuery/jquery-1.4.1.min.js')
+  = javascripts('/javascripts/fancybox/jquery.fancybox-1.3.4.pack.js')
+
+  /[if lte IE 6]
+    = javascripts('/javascripts/DD_belatedPNG_0.0.8a-min.js')
+    
+  = javascripts('/javascripts/default.js')
+  - if @content_for_javascript 
+    = @content_for_javascript
+  
+= "</html>"
