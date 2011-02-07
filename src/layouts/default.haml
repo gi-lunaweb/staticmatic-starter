@@ -49,12 +49,12 @@
           %li= link "Nous contacter", "/contact"
           
   = javascripts('//ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.min.js')
-  = javascripts('/javascripts/fancybox/jquery.fancybox-1.3.4.pack.js')
+  = javascripts('fancybox/jquery.fancybox-1.3.4.pack')
 
   /[if lte IE 6]
-    = javascripts('/javascripts/DD_belatedPNG_0.0.8a-min.js')
+    = javascripts('DD_belatedPNG_0.0.8a-min')
     
-  = javascripts('/javascripts/default.js')
+  = javascripts('default')
   - if @content_for_javascript 
     = @content_for_javascript
   
