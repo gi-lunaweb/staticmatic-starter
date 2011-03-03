@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.7)
     activesupport (3.0.5)
     compass (0.10.6)
       haml (>= 3.0.4)
@@ -21,6 +22,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   compass
   fssm
   haml
