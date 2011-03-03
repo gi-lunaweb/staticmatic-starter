@@ -1,8 +1,8 @@
 - @site_name = ""
 %meta{:charset => "utf-8"}
-%title= @seo_title
-- if @seo_description
-  %meta{:name => "description", :content => @seo_description}
+%title= seo_title
+- if desc = seo_description and not desc.empty?
+  %meta{:name => "description", :content => desc}
 - if @seo_robots
   %meta{:name => "robots", :content => @seo_robots}
 

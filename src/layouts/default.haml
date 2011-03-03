@@ -7,7 +7,7 @@
   
 %head
   = partial("head")
-%body{:id => @body_id, :class => @body_class}
+%body{:id => @body_id, :class => body_class}
   :javascript
     document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
   .wrapper
@@ -55,7 +55,6 @@
     = javascripts('DD_belatedPNG_0.0.8a-min')
     
   = javascripts('default')
-  - if @content_for_javascript 
-    = @content_for_javascript
+  = content_for(:javascript)
   
 = "</html>"

@@ -1,2 +1,9 @@
 .sass-cache
 .bundle/
+
+### IntelliJ IDEA project management files
+
+*.iml
+*.ipr
+*.iws
+.idea/
