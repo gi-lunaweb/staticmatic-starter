@@ -1,11 +1,12 @@
 $(document).ready(function() {
     // Open external links in a new window or tab
-    $('a[rel$=external]').live('click', function() {
+    $('a[rel$="external"]').live('click', function() {
       $(this).attr('target', "_blank");
     });
     $('a[href$=".pdf"]').live('click', function() {
       $(this).attr('target', "_blank");
     });
+    // Open all urls that don't belong to our domain in a new window or tab
     $("a[href^='http:']:not([href*='" + window.location.host + "'])").live('click', function() {
       $(this).attr("target", "_blank");
     });
