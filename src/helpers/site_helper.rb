@@ -1,7 +1,7 @@
 module SiteHelper
 
   def content_for(name, content = nil, &block)
-    @_content_for = {} unless instance_variable_defined? :@_content_for
+    @_content_for = {} unless instance_variable_defined? :@_content_for and not @_content_for.nil?
     @_content_for[name] = String.new unless @_content_for.key? name
 
     content = capture_haml(&block) if block_given?
