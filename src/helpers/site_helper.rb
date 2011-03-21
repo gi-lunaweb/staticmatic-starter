@@ -9,13 +9,13 @@ module SiteHelper
     @_content_for[name] unless content
   end
 
-  def seo_title(title = nil)
-    content_for(:seo_title, "#{title} - ") if title
-    content_for(:seo_title).gsub(/^([\s-]+)/, '').gsub(/([\s-]+)$/, '') unless title
+  def page_title(title = nil)
+    content_for(:page_title, "#{title} - ") if title
+    content_for(:page_title).gsub(/^([\s-]+)/, '').gsub(/([\s-]+)$/, '') unless title
   end
 
-  def seo_description(desc = nil)
-    content_for(:seo_description, desc)
+  def page_description(description = nil)
+    content_for(:page_description, description)
   end
 
   def body_class(klass = nil)

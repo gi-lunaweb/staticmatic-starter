@@ -8,8 +8,6 @@
 %head
   = partial("head")
 %body{:id => @body_id, :class => body_class}
-  :javascript
-    document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
   .wrapper
     .header-wrapper
       #header.header.container_16
@@ -58,8 +56,7 @@
     = javascripts('DD_belatedPNG_0.0.8a-min')
     
   = javascripts('default')
-  - if @content_for_page_scripts
-    = @content_for_page_scripts
+  - content_for :page_scripts
     
   / mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID
   :javascript

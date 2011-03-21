@@ -1,10 +1,10 @@
 - @site_name = ""
 %meta{:charset => "utf-8"}
-%title= seo_title
-- if desc = seo_description and not desc.empty?
-  %meta{:name => "description", :content => desc}
-- if @seo_robots
-  %meta{:name => "robots", :content => @seo_robots}
+%title= page_title
+- if description = page_description and not description.empty?
+  %meta{:name => "description", :content => description}
+- if @page_robots
+  %meta{:name => "robots", :content => @page_robots}
 
 / Favicon
 %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
