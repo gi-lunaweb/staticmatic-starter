@@ -1,3 +1,86 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}body{line-height:1.5;}table{border-collapse:collapse;border-spacing:none;}caption,th,td{text-align:left;font-weight:normal;}table,td,th{vertical-align:middle;}blockquote:before,blockquote:after,q:before,q:after{content:"";}blockquote,q{quotes:"" "";}a img{border:none;}strong{font-weight:bold;}input,textarea,select,optgroup,button{margin: 0;}button{width:auto;overflow:visible;}
-html{overflow-y: scroll;} /* Force scrollbar */
-img { -ms-interpolation-mode: bicubic; }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* 
+  Addendum by Kaelig Deloumeau-Prigent, LunaWeb
+  Last update : 2011-03-07
+  License: none (public domain)
+*/
+
+/* No borders on linked images */
+a img {
+  border: none;
+}
+
+/* Force bold (instead of bolder) */
+strong {
+  font-weight: bold;
+}
+
+/* Disable the 2px margin in some browsers */
+input, textarea, select, optgroup, button {
+  margin: 0;
+}
+
+/* Solve a IE bug */
+button {
+  width:auto;
+  overflow:visible;
+}
+
+/* Force vertical scrollbar */
+html {
+  overflow-y: scroll;
+} 
+
+/* Better image resizing in IE7 and IE8 */
+img {
+  -ms-interpolation-mode: bicubic;
+}

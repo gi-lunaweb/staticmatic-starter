@@ -8,8 +8,6 @@
 %head
   = partial("head")
 %body{:id => @body_id, :class => @body_class}
-  :javascript
-    document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
   .wrapper
     .header-wrapper
       #header.header.container_16
@@ -48,14 +46,24 @@
           %li= link "Plan du site", "/sitemap"
           %li= link "Nous contacter", "/contact"
           
-  = javascripts('//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+  / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary
+  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"}
+  :javascript
+    window.jQuery || document.write('<script src="/javascripts/jquery-1.5.1.min.js">\x3C/script>')
   = javascripts('fancybox/jquery.fancybox-1.3.4.pack')
 
   /[if lte IE 6]
     = javascripts('DD_belatedPNG_0.0.8a-min')
     
   = javascripts('default')
-  - if @content_for_javascript 
-    = @content_for_javascript
+  - if @content_for_page_scripts
+    = @content_for_page_scripts
+    
+  / mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID
+  :javascript
+    var _gaq=[['_setAccount','UA-281160-75'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
   
 = "</html>"

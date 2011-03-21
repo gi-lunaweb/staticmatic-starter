@@ -8,7 +8,7 @@ require 'compass'
  
 # Default is true
 # When false .html & index.html get stripped off generated urls
-configuration.use_extensions_for_page_links = false
+configuration.use_extensions_for_page_links = true
  
 # Default is an empty hash
 configuration.sass_options = Compass.sass_engine_options
