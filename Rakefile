@@ -13,6 +13,31 @@ desc "Builds the site"
 task :build => 'styles:clear' do
   puts "*** Building the site ***"
   system "staticmatic build ."
+  system "rake css_versioning"
+  system "rake build_php"
+end
+
+desc "Converts includes in html files to php. Usage: %php_include page-to-include.php"
+task :build_php do
+  puts "*** Converting php includes ***"
+  Dir[File.expand_path('../site/**/*.html', __FILE__)].each do |file|
+    content = File.open(file).read
+    if content.index '<php_include>'
+      content = content.gsub(/<php_include>([^<]+)<\/php_include>/, '<?php include(\'../includes/\\1\'); ?>')
+      File.open(file.gsub(/\.html$/, '.php'), 'w+').puts content
+      File.unlink file
+    end
+  end
+end
+
+desc "Adds version query param to css. ie: application.css?1300696462"
+task :css_versioning do
+  puts "*** Adding css query params ***"
+  Dir[File.expand_path('../site/**/*.html', __FILE__)].each do |file|
+    content = File.open(file).read
+    content = content.gsub(/application.css/, 'application.css?' + Time.now.to_i.to_s)
+    File.open(file, 'w+').puts content
+  end
 end
 
 desc "Clears and generates new styles, builds and deploys"
