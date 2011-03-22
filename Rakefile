@@ -30,14 +30,17 @@ task :build_php do
   end
 end
 
-desc "Adds version query param to css. ie: application.css?1300696462"
+desc "Adds versioning to css. ie: application.1300696462.css"
 task :css_versioning do
-  puts "*** Adding css query params ***"
+  @versionned_css = 'application.' + Time.now.to_i.to_s + '.css'
+  puts "*** Adding css timestamp ***"
   Dir[File.expand_path('../site/**/*.html', __FILE__)].each do |file|
     content = File.open(file).read
-    content = content.gsub(/application.css/, 'application.css?' + Time.now.to_i.to_s)
+    content = content.gsub(/application.css/, @versionned_css)
     File.open(file, 'w+').puts content
   end
+  puts "*** Renaming CSS with timestamp ***"
+  copy("site/stylesheets/application.css", "site/stylesheets/" + @versionned_css)
 end
 
 desc "Clears and generates new styles, builds and deploys"
