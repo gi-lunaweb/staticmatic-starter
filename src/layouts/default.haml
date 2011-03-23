@@ -1,3 +1,4 @@
+- @current_page = 'menu-subitem'
 !!! 5
 /[if lt IE 7] <html lang="fr" class="no-js ie6">
 /[if IE 7 ]    <html lang="fr" class="no-js ie7">
@@ -17,12 +18,8 @@
             %li= link "Aller au contenu", "#content"
             %li= link "Aller à la recherche", "#footer-search"
             %li= link "Aller à la navigation principale", "#navigation"
-
-        %ul#navigation.navigation
-          %li#n1= link "Accueil", "/"
-          %li#n2= link "Menu item", "/item1/"
-          %li#n3= link "Menu item", "/item2/"
-          %li#n4= link "Menu item", "/item3/"
+            
+        = navigation
 
         %ul#header-tools.list-inline.small.list-separators
           %li= link "Qui sommes-nous", "/aboutus"
@@ -39,6 +36,7 @@
   .footer.small
     .container_16
       #footer-navigation.grid_9
+        = sitemap
         %ul.list-inline.left.list-separators{:role => "contentinfo"}
           %li< 
             %b © 2011

@@ -1,0 +1,28 @@
+-
+  name: "accueil"
+  title: "Accueil"
+  url: "/"
+  show_in_navigation: false
+  show_in_sitemap: false
+-
+  name: "menu-item-1"
+  title: "Menu item"
+  url: "/item1/"
+  children:
+    -
+      name: "menu-subitem"
+      title: "Menu Subitem"
+      url: "/item1/subitem"
+      children:
+        -
+          name: "menu-subitem"
+          title: "Menu Subitem"
+          url: "/item1/subitem"
+-
+  name: "menu-item-2"
+  title: "Menu item"
+  url: "/item2/"
+-
+  name: "menu-item-3"
+  title: "Menu item"
+  url: "/item3/"
