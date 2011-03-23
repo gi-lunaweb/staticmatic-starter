@@ -24,7 +24,7 @@ module SiteHelper
   end
 
   def navigation(level = 1)
-    ul_li pages_yml, level * 2
+    ul_li 'navigation', pages_yml, level * 2
   end
 
   def sitemap(level = 3)
@@ -32,15 +32,17 @@ module SiteHelper
     
     nav = "<dl>\n"
     pages_yml.each do |page|
-      nav << %(  <dt>#{page['title']}</dt>\n)
-      nav << %(  <dd>\n)
-      if page['children']
-        nav_children, active = ul_li(page['children'], level * 2, 2)
-        nav_children.gsub!(' class="active"', '')
-        
-        nav << nav_children
+      unless page["hide_in_sitemap"]
+        nav << %(  <dt>#{page['title']}</dt>\n)
+        nav << %(  <dd>\n)
+        if page['children']
+          nav_children, active = ul_li('sitemap', page['children'], level * 2, 2)
+          nav_children.gsub!(' class="active"', '')
+          
+          nav << nav_children
+        end
+        nav << %(  </dd>\n)
       end
-      nav << %(  </dd>\n)
     end
     nav << '</dl>'
   end
@@ -73,7 +75,7 @@ module SiteHelper
 
   private
   
-  def ul_li(pages, max_indice = 2, indice = 0)
+  def ul_li(type, pages, max_indice = 2, indice = 0)
     active = @current_page || nil
     
     has_active = false
@@ -81,28 +83,30 @@ module SiteHelper
     nav = %(#{prefix}<ul>\n)
     
     pages.each_with_index do |page, i|
-      has_active = (active == page['name'])
-      if page['children']
-        nav_children = ''
-        if max_indice > (indice + 2)
-          nav_children, active = ul_li(page['children'], max_indice, indice + 2)
-          has_active ||= active
+      unless page["hide_in_#{type}"]
+        has_active = (active == page['name'])
+        if page['children']
+          nav_children = ''
+          if max_indice > (indice + 2)
+            nav_children, active = ul_li(type, page['children'], max_indice, indice + 2)
+            has_active ||= active
+          end
         end
+        
+        id = indice == 0 ? %( id="n#{i + 1}") : ''
+        klass = has_active ? %( class="active") : ''
+        
+        nav << %(#{prefix}  <li#{id}#{klass}>\n)
+        nav << %(#{prefix}    <a href="#{page['url']}">#{page['title']}</a>)
+        
+        if page['children'] && !nav_children.blank?
+          nav << "\n#{nav_children}"
+        else
+          nav << "\n"
+        end
+        
+        nav << %(#{prefix}  </li>\n)
       end
-      
-      id = indice == 0 ? %( id="n#{i + 1}") : ''
-      klass = has_active ? %( class="active") : ''
-      
-      nav << %(#{prefix}  <li#{id}#{klass}>\n)
-      nav << %(#{prefix}    <a href="#{page['url']}">#{page['title']}</a>)
-      
-      if page['children'] && !nav_children.blank?
-        nav << "\n#{nav_children}"
-      else
-        nav << "\n"
-      end
-      
-      nav << %(#{prefix}  </li>\n)
     end
     
     nav << %(#{prefix}</ul>\n)

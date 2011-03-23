@@ -2,8 +2,7 @@
   name: "accueil"
   title: "Accueil"
   url: "/"
-  show_in_navigation: false
-  show_in_sitemap: false
+  hide_in_sitemap: true
 -
   name: "menu-item-1"
   title: "Menu item"
