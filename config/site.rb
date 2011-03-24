@@ -1,4 +1,5 @@
 require 'compass'
+require 'yaml'
 
 # Default is 3000
 # configuration.preview_server_port = 3000
