@@ -23,11 +23,11 @@ module SiteHelper
     content_for(:body_class).strip unless klass
   end
 
-  def navigation(level = 1)
-    ul_li 'navigation', pages_yml, level * 2
+  def navigation(depth = 1)
+    pages_list 'navigation', pages_yml, depth * 2
   end
 
-  def sitemap(level = 3)
+  def sitemap(depth = 3)
     active = @current_page || nil
     
     nav = "<dl>\n"
@@ -36,7 +36,7 @@ module SiteHelper
         nav << %(  <dt>#{page['title']}</dt>\n)
         nav << %(  <dd>\n)
         if page['children']
-          nav_children, active = ul_li('sitemap', page['children'], level * 2, 2)
+          nav_children, active = pages_list('sitemap', page['children'], depth * 2, 2)
           nav_children.gsub!(' class="active"', '')
           
           nav << nav_children
@@ -75,7 +75,7 @@ module SiteHelper
 
   private
   
-  def ul_li(type, pages, max_indice = 2, indice = 0)
+  def pages_list(type, pages, max_indice = 2, indice = 0)
     active = @current_page || nil
     
     has_active = false
@@ -88,7 +88,7 @@ module SiteHelper
         if page['children']
           nav_children = ''
           if max_indice > (indice + 2)
-            nav_children, active = ul_li(type, page['children'], max_indice, indice + 2)
+            nav_children, active = pages_list(type, page['children'], max_indice, indice + 2)
             has_active ||= active
           end
         end

@@ -14,9 +14,9 @@
       url: "/item1/subitem"
       children:
         -
-          name: "menu-subitem"
-          title: "Menu Subitem"
-          url: "/item1/subitem"
+          name: "menu-sub-subitem"
+          title: "Menu Sub-Subitem"
+          url: "/item1/subitem/subsubitem"
 -
   name: "menu-item-2"
   title: "Menu item"
