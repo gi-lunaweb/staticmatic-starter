@@ -113,7 +113,6 @@ a {
 /* =================================================== */
 p, ul, ol, blockquote, pre {
   margin-bottom: 1.5em;
-  @include border-radius(4);
 }
 
 ol,
