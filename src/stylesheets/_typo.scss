@@ -99,8 +99,8 @@ sub {
   bottom: -0.33em;
 }
 
-em, i { font-style: italic; }
-
+b, strong { font-weight: bold;}
+em, i { font-style: italic;}
 
 /* ========= */
 /* = Links = */
