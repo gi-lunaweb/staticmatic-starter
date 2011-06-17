@@ -53,7 +53,12 @@ table {
   Last update : 2011-03-07
   License: none (public domain)
 */
-
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes. */
+body{
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none; }
+  
 /* No borders on linked images */
 a img {
   border: none;
@@ -71,8 +76,8 @@ input, textarea, select, optgroup, button {
 
 /* Solve a IE bug */
 button {
-  width:auto;
-  overflow:visible;
+  width: auto;
+  overflow: visible;
 }
 
 /* Force vertical scrollbar */
@@ -83,4 +88,11 @@ html {
 /* Better image resizing in IE7 and IE8 */
 img {
   -ms-interpolation-mode: bicubic;
+}
+
+/* REALLY reset forms in Firefox */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }

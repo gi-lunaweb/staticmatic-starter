@@ -44,10 +44,6 @@ $(document).ready(function() {
       });
     });
   }
-  if (undefined !== window.DD_belatedPNG) {
-    DD_belatedPNG.fix('.png');
-    DD_belatedPNG.fix('#logo img');
-  }
   
   
   $("a[rel=fancybox]").fancybox({

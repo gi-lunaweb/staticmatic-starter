@@ -1,6 +1,12 @@
 @import "base";
 @import "reset";
-@import "grid";
+@include blueprint-grid;
+div.border {
+  @include border;
+}
+div.colborder {
+  @include colborder;
+}
 @import "layout";
 @import "typo";
 @import "forms";

@@ -1,4 +1,5 @@
 - @site_name = ""
+%meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
 %meta{:charset => "utf-8"}
 %title= page_title
 / SEO
@@ -6,15 +7,30 @@
   %meta{:name => "description", :content => description}
 - if @page_robots
   %meta{:name => "robots", :content => @page_robots}
+
+/ OpenGraph Tags http://developers.facebook.com/docs/opengraph/
+%meta{:content => @site_name, :property => "og:site_name"}
+%meta{:content => page_title, :property => "og:title"}
+%meta{:content => description, :property => "og:description"}
+%meta{:content => "canonical url of the page", :property => "og:url"}
+%meta{:content => "/images/logo.png", :property => "og:image"}
+
 / Favicon
 %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
 %link{:href => "/favicon.ico", :rel => "Shortcut Icon", :type => "image/x-icon"}
+
+/ Touch Icons
+%link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}
+%link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon-precomposed"}
+
 / Tweaks
 %meta{:content => "no", "http-equiv" => "imagetoolbar"}
 %meta{:content => "true", :name => "MSSmartTagsPreventParsing"}
-%meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
-%meta{:content => "width=device-width", :name => "viewport"}
-= javascripts "modernizr-1.7.min"
+%meta{:content => "width=1024", :name => "viewport"}
 
-= stylesheets :application
-%link{:href => "/javascripts/fancybox/jquery.fancybox-1.3.4.css", :media => "all", :rel => "stylesheet", :type => "text/css"}
+/ Feature detection, custom build from http://www.modernizr.com/
+= javascripts "modernizr"
+
+= stylesheets :application, :media => :"screen,projection"
+= stylesheets :print, :media => :print
+%link{:href => "/javascripts/fancybox/jquery.fancybox-1.3.4.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}

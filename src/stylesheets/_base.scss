@@ -7,6 +7,16 @@ $chover: darken($clink, 10%);
 $cbody: #222;
 $typo-alt: 'Lucida Grande', 'Lucida Sans', Verdana, Arial, sans-serif;
 
+/* ======================== */
+/* = Blueprint Grid Setup = */
+/* ======================== */
+$blueprint-grid-columns: 24;
+$blueprint-grid-width: 30px;
+$blueprint-grid-margin: 10px;
+$blueprint-grid-outer-width: 40px;
+$blueprint-container-size: 950px;
+$experimental-support-for-svg: true;
+
 /* ================== */
 /* = Import helpers = */
 /* ================== */
@@ -14,10 +24,18 @@ $typo-alt: 'Lucida Grande', 'Lucida Sans', Verdana, Arial, sans-serif;
 @import "compass/css3";
 @import "compass/utilities/general/min";
 @import "compass/utilities/general/clearfix";
+@import "blueprint/grid";
+@import "blueprint/scaffolding";
 
 /* ==================== */
 /* = Site-wide mixins = */
 /* ==================== */
+@mixin container {
+  width: $blueprint_container_size;
+  margin: 0 auto;
+  @include pie-clearfix;
+}
+
 @mixin nav($w, $p, $class, $navheight) {
   width: $w;
   background-position: -($p) 0;
