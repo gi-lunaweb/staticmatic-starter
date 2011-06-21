@@ -69,81 +69,46 @@
         line-height: 1em;
       }
       @-webkit-keyframes heat {
-        0% {
-          margin-left: 0;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
-        25% {
-          margin-left: 10px;
-          opacity: 1;
-          -webkit-animation-timing-function: linear;
-        }
-        50% {
-          margin-left: 20px;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
-        75% {
-          margin-left: 10px;
-          opacity: 1;
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          margin-left: 0;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
+        0%{margin-left:0;opacity:.5;-webkit-animation-timing-function:linear;}
+        25%{margin-left:10px;opacity:1;-webkit-animation-timing-function:linear;}
+        50%{margin-left:20px;opacity:.5;-webkit-animation-timing-function:linear;}
+        75%{margin-left:10px;opacity:1;-webkit-animation-timing-function:linear;}
+        100%{margin-left:0;opacity:.5;-webkit-animation-timing-function:linear;}
+      }
+      @-moz-keyframes heat {
+        0%{margin-left:0;opacity:.5;-moz-animation-timing-function:linear;}
+        25%{margin-left:10px;opacity:1;-moz-animation-timing-function:linear;}
+        50%{margin-left:20px;opacity:.5;-moz-animation-timing-function:linear;}
+        75%{margin-left:10px;opacity:1;-moz-animation-timing-function:linear;}
+        100%{margin-left:0;opacity:.5;-moz-animation-timing-function:linear;}
       }
       @-webkit-keyframes heat-2 {
-        0% {
-          margin-left: 0;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
-        33% {
-          margin-left: 4px;
-          opacity: 1;
-          -webkit-animation-timing-function: linear;
-        }
-        66% {
-          margin-left: 8px;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          margin-left: 0;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
+        0%{margin-left:0;opacity:.5;-webkit-animation-timing-function:linear;}
+        33%{margin-left:4px;opacity:1;-webkit-animation-timing-function:linear;}
+        66%{margin-left:8px;opacity:.5;-webkit-animation-timing-function:linear;}
+        100%{margin-left:0;opacity:.5;-webkit-animation-timing-function:linear;}
+      }
+      @-moz-keyframes heat-2 {
+        0%{margin-left:0;opacity:.5;-moz-animation-timing-function:linear;}
+        33%{margin-left:4px;opacity:1;-moz-animation-timing-function:linear;}
+        66%{margin-left:8px;opacity:.5;-moz-animation-timing-function:linear;}
+        100%{margin-left:0;opacity:.5;-moz-animation-timing-function:linear;}
       }
       @-webkit-keyframes heat-3 {
-        0% {
-          margin-left: -20px;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
-        25% {
-          margin-left: -5px;
-          opacity: 1;
-          -webkit-animation-timing-function: linear;
-        }
-        50% {
-          margin-left: 10px;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
-        75% {
-          margin-left: 0px;
-          opacity: 1;
-          -webkit-animation-timing-function: linear;
-        }
-        100% {
-          margin-left: -20px;
-          opacity: .5;
-          -webkit-animation-timing-function: linear;
-        }
+        0%{margin-left:-20px;opacity:.5;-webkit-animation-timing-function:linear;}
+        25%{margin-left:-5px;opacity:1;-webkit-animation-timing-function:linear;}
+        50%{margin-left:10px;opacity:.5;-webkit-animation-timing-function:linear;}
+        75%{margin-left:0px;opacity:1;-webkit-animation-timing-function:linear;}
+        100%{margin-left:-20px;opacity:.5;-webkit-animation-timing-function:linear;}
       }
+      @-moz-keyframes heat-3 {
+        0%{margin-left:-20px;opacity:.5;-moz-animation-timing-function:linear;}
+        25%{margin-left:-5px;opacity:1;-moz-animation-timing-function:linear;}
+        50%{margin-left:10px;opacity:.5;-moz-animation-timing-function:linear;}
+        75%{margin-left:0px;opacity:1;-moz-animation-timing-function:linear;}
+        100%{margin-left:-20px;opacity:.5;-moz-animation-timing-function:linear;}
+      }
+
       .heat {
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAABZCAMAAADMz6xZAAAAKlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKE86IAAAADnRSTlMAAQIDBAUGBwgJCgsMDRK8QVgAAAMbSURBVHjazZrZbgMxCEWDN2wD//+7VaS2PFQzLFPJ4TUd95jlckfJKx319RFRaI/yCSCDhbB8QkJEhMZ5EpR3rHaao7K8gwacL8w7GM+CwDeHUD+bkCnfsc8265afGIfr8hMLTvYp/3LQSY4hn8GxRTlOypho4EEOEo16sjs0dv6U9nRYRDTSMgYo69nGlv/pjkoi1OEhxvNhgSUiMmseQ+Mf2oz6M4zns9I4DVIdGKVBbDlQTWTSzkb1uvmSXZXkKwo6PXT/7faSr4kYpnF3v5eSnllt9sCiy7oCK0c2Gct08zYIGqJsd4Z0l5tnvE1HzMIouQY4XSMVX50xUxJZfvc6XHdjvZfZTRot8Mx0pbi7fbkGhTI4PRjL+7Z0hW4/hg6MHaegqE9qjulzqa4h5AY/2XZOwhRaRvej3czyjlJwiSsvmclYTorMy/Rtypf/1PaXYqe8fLUuWDwv0Ibc2ZeoxtEUoNDzwouoGorYbYr0+wlfY2y3EgGLMauBUS/3itgdi8S0BfYBfEFht/2SpGLYi2v6z0X5G3kL3e8oZBiHmAV0dhbfUqxQY4z8Ww3eURBESjJDFPNK8mag4Yo1qjbFRTJGpOFmalQ18EqbeqThwBjVoFGqBkXEb+Up8GY79JD5xAcUWk6gmATsxHJXistyrqAQ8YNk9Mt/VaNyyHkRb9c32OblkmbAtihTP6phOZxZ/QS+vgCG79azrbFvNG+HhQg4lw28U97EnsRUb5Q/FJcY7PdvGpApCRdj84cvNhLPcLnr+5ZRIUp0Rrv1czXVbj1cE7z/vKU8A0P06xZD2jC3HVYQoxkHUsTic6hL7WbqOZcPO7Letp3zHiqzxmC/+g5H6SvnLHbZblNcPB0IO/kLjE5eDtQt5Elwj3EAso8DyLUyYOY4XmX6OAr7BqHuDIeCUHFykKUFWzkSIGxxkDapBwRfcRBkEa5Oqam2Oq7kL4VgkJ1I9Lu8gqx1DkVbZiIr+XUSOqmABGtjJhJZ58px3oRXKiDUz3ZYf5ePspXjaNStwnAWZKowHI2CvOEogU5kPU+hc/AF7xGA0v9v8BQAAAAASUVORK5CYII=);
         position: absolute;
@@ -157,12 +122,17 @@
         -webkit-animation-name: heat;
         -webkit-animation-duration: 3s;
         -webkit-animation-iteration-count: infinite;
+        -moz-animation-name: heat;
+        -moz-animation-duration: 3s;
+        -moz-animation-iteration-count: infinite;
       }
       #heat-2 {
         background-position: -46px 0;
         left: 76px;
         -webkit-animation-name: heat-2;
         -webkit-animation-duration: 2.5s;
+        -moz-animation-name: heat-2;
+        -moz-animation-duration: 2.5s;
         top: 85px;
       }
       #heat-3 {
@@ -171,6 +141,8 @@
         left: 105px;
         -webkit-animation-name: heat-3;
         -webkit-animation-duration: 4s;
+        -moz-animation-name: heat-3;
+        -moz-animation-duration: 4s;
       }
     </style> 
   </head> 
