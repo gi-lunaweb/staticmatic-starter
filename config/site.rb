@@ -1,6 +1,6 @@
-require 'rails'
 require 'compass'
 require 'yaml'
+require 'src/lib/core_ext/hash'
 
 # Default is 3000
 # configuration.preview_server_port = 3000

@@ -1,16 +1,16 @@
 - @site_name = ""
 %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
 %meta{:charset => "utf-8"}
-%title= page_title
+%title= meta_title_full
 / SEO
-- if description = page_description and not description.empty?
+- if description = meta_description and not description.empty?
   %meta{:name => "description", :content => description}
-- if @page_robots
-  %meta{:name => "robots", :content => @page_robots}
+- if robots = meta_robots and not robots.empty?
+  %meta{:name => "robots", :content => robots}
 
 / OpenGraph Tags http://developers.facebook.com/docs/opengraph/
 %meta{:content => @site_name, :property => "og:site_name"}
-%meta{:content => page_title, :property => "og:title"}
+%meta{:content => meta_title, :property => "og:title"}
 %meta{:content => description, :property => "og:description"}
 %meta{:content => "canonical url of the page", :property => "og:url"}
 %meta{:content => "/images/logo.png", :property => "og:image"}
@@ -29,10 +29,10 @@
 %meta{:content => "width=1024", :name => "viewport"}
 
 / Feature detection, custom build from http://www.modernizr.com/
-= javascripts "modernizr"
+= javascript_include_tag "modernizr"
 
-= stylesheets :application, :media => :"screen,projection"
-= stylesheets :print, :media => :print
+= stylesheet_link_tag :application, :media => :"screen,projection"
+= stylesheet_link_tag :print, :media => :print
 %link{:href => "/javascripts/fancybox/jquery.fancybox-1.3.4.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}
 
 :plain
